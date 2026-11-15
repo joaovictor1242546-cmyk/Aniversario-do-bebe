@@ -1,125 +1,433 @@
 
-    <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>365 Sorrisos - 1 Aninho do Isaac</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fef9c3 0%, #e0f2fe 100%);
-            color: #334155;
+        * {
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fef9c3 0%, #e0f2fe 50%, #ffedd5 100%);
+            color: #334155;
+            line-height: 1.6;
+            padding: 30px 15px;
             min-height: 100vh;
         }
-        .container {
+
+        .site-container {
             width: 100%;
-            max-width: 600px;
+            max-width: 680px;
+            margin: 0 auto;
             background: #ffffff;
-            padding: 30px;
+            padding: 40px 30px;
+            border-radius: 40px;
+            box-shadow: 0 20px 45px rgba(2, 132, 199, 0.15);
+            border: 8px solid #bae6fd;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Cabeçalho Temático */
+        .hero {
+            background: linear-gradient(180deg, #e0f2fe 0%, #fef9c3 100%);
+            color: #1e293b;
+            text-align: center;
+            padding: 40px 20px;
             border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 6px solid #bae6fd;
-            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            border: 4px solid #ffffff;
         }
-        h1 {
-            color: #0284c7;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+
+        .img-sol {
+            width: 90px;
+            height: auto;
+            margin-bottom: -10px;
+            animation: flutuar 3s ease-in-out infinite;
         }
-        .sol {
-            font-size: 3rem;
+
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
         }
-        .tag {
-            background: #fef08a;
-            color: #d97706;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: bold;
+
+        .tag-festa {
             display: inline-block;
+            background-color: #ffffff;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #0284c7;
             margin-bottom: 15px;
-        }
-        .box {
-            background: #f0fdf4;
-            border: 2px solid #4ade80;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-        input {
-            width: 80%;
-            padding: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
             border: 2px solid #bae6fd;
-            border-radius: 25px;
-            text-align: center;
-            font-size: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 10px;
-            outline: none;
+            color: #0284c7;
+            font-weight: 900;
         }
-        button {
-            background: #0284c7;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
+
+        .hero h1 span {
+            color: #f59e0b;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #475569;
+            font-weight: 600;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Moldura da Foto do Isaac */
+        .foto-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+            background-color: #fef08a;
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Elementos Decorativos em Ilustração */
+        .decor-img {
+            max-width: 200px;
+            margin: 15px auto;
+            display: block;
+        }
+
+        /* Contador Regressivo */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .countdown-box {
+            background: #ffffff;
+            border: 3px solid #7dd3fc;
+            padding: 10px;
+            border-radius: 16px;
+            min-width: 70px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .countdown-box span {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #0284c7;
+        }
+
+        .countdown-box small {
+            font-size: 0.7rem;
+            color: #64748b;
             font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .data-badge {
+            background-color: #fef9c3;
+            color: #854d0e;
+            border: 2px dashed #facc15;
+            padding: 12px 20px;
+            border-radius: 16px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        /* Seções de Conteúdo */
+        .content-section {
+            background: #f0fdf4;
+            padding: 30px 20px;
+            border-radius: 24px;
+            margin-bottom: 25px;
+            border: 3px solid #bbf7d0;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            color: #16a34a;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .content-section p {
+            color: #166534;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        .input-nome {
+            width: 100%;
+            max-width: 380px;
+            padding: 14px 20px;
+            border: 3px solid #7dd3fc;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 15px;
+            text-align: center;
+            background: #ffffff;
+            font-weight: bold;
+            color: #475569;
+        }
+
+        .btn-principal {
+            display: inline-block;
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            border: none;
             cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
-        button:hover {
-            background: #0369a1;
+
+        .btn-principal:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #0284c7, #0369a1);
         }
-        #msg {
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #4ade80, #16a34a);
+            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+        }
+
+        .hidden-msg {
             display: none;
+            background-color: #fef9c3;
+            border: 3px solid #facc15;
+            padding: 22px;
+            border-radius: 18px;
+            color: #854d0e;
+        }
+
+        .hidden-msg h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            color: #a16207;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-top: 15px;
-            color: #15803d;
+        }
+
+        @media (max-width: 550px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 18px;
+            border: 2px solid #fed7aa;
+            text-align: center;
+        }
+
+        .info-card .icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-card h3 {
+            color: #d97706;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            color: #9a3412;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: #0284c7;
+            font-size: 0.9rem;
+            margin-top: 20px;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="sol">☀️</div>
-        <span class="tag">1 Aninho do Isaac • 12 de Dezembro</span>
-        <h1>365 Sorrisos</h1>
-        <p>Cada dia ao lado do Isaac foi repleto de alegria. Vamos celebrar juntos!</p>
+    <div class="site-container">
+        <!-- Cabeçalho com o Sol em aquarela e Foto do Isaac -->
+        <header class="hero">
+            <!-- Insira o arquivo do sol (ex: sol.png) -->
+            <img src="sol.png" alt="Sol" class="img-sol">
+            
+            <br>
+            <span class="tag-festa">✨ 1 Aninho do Isaac • 12 de Dezembro ✨</span>
+            
+            <!-- Foto real do Isaac -->
+            <div class="foto-container">
+                <img src="isaac.png" alt="Isaac">
+            </div>
 
-        <div class="box">
-            <h3>Confirme sua Presença</h3>
-            <p>Digite seu nome abaixo:</p>
-            <div id="formPresenca">
-                <input type="text" id="nome" placeholder="Seu nome completo...">
+            <h1><span>365</span> Sorrisos</h1>
+            <p>Cada dia ao lado do Isaac foi repleto de luz e alegria. Venha comemorar esse momento lindo com a gente!</p>
+            
+            <!-- Ilustração do Arco-Íris ou Balão opcional no topo -->
+            <img src="arcoiris.png" alt="Arco-íris" class="decor-img">
+
+            <!-- Contador Regressivo -->
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <small>Dias</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <small>Horas</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <small>Minutos</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <small>Segundos</small>
+                </div>
+            </div>
+
+            <div class="data-badge">
+                📅 <strong>Confirmação de Presença:</strong> 15 a 25 de Novembro
+            </div>
+        </header>
+
+        <!-- Seção de Confirmação Interativa -->
+        <section class="content-section" id="confirmar">
+            <h2>Confirme sua Presença 🎉</h2>
+            <p>Digite seu nome para avisar a família que você vai:</p>
+            
+            <div class="rsvp-box" id="rsvpBox">
+                <input type="text" id="nomeConvidado" placeholder="Seu nome completo..." class="input-nome">
                 <br>
-                <button onclick="confirmar()">Sim, eu vou! 💛</button>
+                <button onclick="confirmarPresenca()" class="btn-principal">Sim, eu vou! 💛</button>
             </div>
-            <div id="msg">
-                Oba, <span id="nomeUser"></span>! Agradecemos a sua confirmação. Contamos com você! ✨
+
+            <div id="mensagemAgradecimento" class="hidden-msg">
+                <h3>Oba, <span id="nomeExibido"></span>! ✨</h3>
+                <p>Agradecemos a sua confirmação. Contamos com a sua energia boa para celebrar com o Isaac!</p>
             </div>
+        </section>
+
+        <!-- Seção de Balão Decorativo -->
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="balao.png" alt="Balão" class="decor-img" style="max-width: 150px;">
         </div>
 
-        <div style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">
-            <p>👕 <strong>Roupas:</strong> Sugerimos tamanho 2 anos.</p>
-            <p>👟 <strong>Calçados:</strong> Tamanho 19.</p>
+        <!-- Seção de Dúvidas / WhatsApp -->
+        <section class="content-section" style="background-color: #fef9c3; border-color: #fde047;">
+            <h2 style="color: #d97706;">Ficou com alguma dúvida? 💬</h2>
+            <p style="color: #92400e;">Fale diretamente com a organização no WhatsApp:</p>
+            <a href="https://wa.me/5511900000000?text=Olá!%20Vim%20pelo%20site%20do%201%20aninho%20do%20Isaac." target="_blank" class="btn-principal btn-whatsapp">
+                Chamar no WhatsApp 📱
+            </a>
+        </section>
+
+        <!-- Seção de Informações e Tamanhos -->
+        <section class="content-section" style="background-color: #e0f2fe; border-color: #bae6fd;">
+            <h2 style="color: #0284c7;">Dicas & Tamanhos do Isaac 👕👟</h2>
+            <p style="color: #0369a1;">Medidas atuais para carinhos em forma de presente:</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="icon">👕</span>
+                    <h3>Roupas</h3>
+                    <p>Usa tamanho de 1 ano há um tempo, sugerimos <strong>tamanho 2 anos</strong> (ou maior).</p>
+                </div>
+                <div class="info-card">
+                    <span class="icon">👟</span>
+                    <h3>Calçados</h3>
+                    <p>O pezinho dele calça atualmente tamanho <strong>19</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé com Nuvens -->
+        <div style="margin: 15px 0;">
+            <img src="nuvem.png" alt="Nuvem" class="decor-img" style="max-width: 120px; opacity: 0.8;">
         </div>
+        <footer>
+            <p>Feito com muito amor para o 1º Aninho do Isaac ☀️💛</p>
+        </footer>
     </div>
 
+    <!-- Script de Interatividade e Contador -->
     <script>
-        function confirmar() {
-            var nome = document.getElementById('nome').value.trim();
-            if (nome === "") {
-                alert("Por favor, digite o seu nome!");
+        function confirmarPresenca() {
+            const inputNome = document.getElementById('nomeConvidado').value.trim();
+            
+            if (inputNome === "") {
+                alert("Por favor, digite o seu nome antes de confirmar!");
                 return;
             }
-            document.getElementById('formPresenca').style.display = 'none';
-            document.getElementById('nomeUser').innerText = nome;
-            document.getElementById('msg').style.display = 'block';
+
+            document.getElementById('rsvpBox').style.display = 'none';
+            document.getElementById('nomeExibido').innerText = inputNome;
+            document.getElementById('mensagemAgradecimento').style.display = 'block';
         }
+
+        const countDownDate = new Date("Dec 12, 2026 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown-container").innerHTML = "<h3>O grande dia chegou! 🎉</h3>";
+            }
+        }, 1000);
     </script>
 
 </body>
