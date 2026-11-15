@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +34,6 @@
             position: relative;
         }
 
-        /* Cabeçalho Temático */
         .hero {
             background: linear-gradient(180deg, #e0f2fe 0%, #fef9c3 100%);
             color: #1e293b;
@@ -92,7 +91,6 @@
             margin-right: auto;
         }
 
-        /* Moldura da Foto do Isaac */
         .foto-container {
             width: 160px;
             height: 160px;
@@ -116,7 +114,6 @@
             display: block;
         }
 
-        /* Contador Regressivo */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -159,7 +156,6 @@
             font-size: 0.95rem;
         }
 
-        /* Seções de Conteúdo */
         .content-section {
             background: #f0fdf4;
             padding: 30px 20px;
@@ -250,6 +246,172 @@
             }
         }
 
-        .info
+        .info-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 18px;
+            border: 2px solid #fed7aa;
+            text-align: center;
+        }
 
+        .info-card .icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-card h3 {
+            color: #d97706;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            color: #9a3412;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: #0284c7;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <header class="hero">
+            <!-- Certifique-se de que o arquivo do sol no GitHub se chame sol.jpg -->
+            <img src="sol.jpg" alt="Sol" class="img-sol">
+            
+            <br>
+            <span class="tag-festa">✨ 1 Aninho do Isaac • 12 de Dezembro ✨</span>
+            
+            <div class="foto-container">
+                <img src="menino.jpg" alt="Isaac">
+            </div>
+
+            <h1><span>365</span> Sorrisos</h1>
+            <p>Cada dia ao lado do Isaac foi repleto de luz e alegria. Venha comemorar esse momento lindo com a gente!</p>
+            
+            <img src="balao.jpg" alt="Balão" class="decor-img">
+
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <small>Dias</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <small>Horas</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <small>Minutos</small>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <small>Segundos</small>
+                </div>
+            </div>
+
+            <div class="data-badge">
+                📅 <strong>Confirmação de Presença:</strong> 15 a 25 de Novembro
+            </div>
+        </header>
+
+        <section class="content-section" id="confirmar">
+            <h2>Confirme sua Presença 🎉</h2>
+            <p>Digite seu nome para avisar a família que você vai:</p>
+            
+            <div class="rsvp-box" id="rsvpBox">
+                <input type="text" id="nomeConvidado" placeholder="Seu nome completo..." class="input-nome">
+                <br>
+                <button onclick="confirmarPresenca()" class="btn-principal">Sim, eu vou! 💛</button>
+            </div>
+
+            <div id="mensagemAgradecimento" class="hidden-msg">
+                <h3>Oba, <span id="nomeExibido"></span>! ✨</h3>
+                <p>Agradecemos a sua confirmação. Contamos com a sua energia boa para celebrar com o Isaac!</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="background-color: #fef9c3; border-color: #fde047;">
+            <h2 style="color: #d97706;">Ficou com alguma dúvida? 💬</h2>
+            <p style="color: #92400e;">Fale diretamente com a organização no WhatsApp:</p>
+            <a href="https://wa.me/5511900000000?text=Olá!%20Vim%20pelo%20site%20do%201%20aninho%20do%20Isaac." target="_blank" class="btn-principal btn-whatsapp">
+                Chamar no WhatsApp 📱
+            </a>
+        </section>
+
+        <section class="content-section" style="background-color: #e0f2fe; border-color: #bae6fd;">
+            <h2 style="color: #0284c7;">Dicas & Tamanhos do Isaac 👕👟</h2>
+            <p style="color: #0369a1;">Medidas atuais para carinhos em forma de presente:</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="icon">👕</span>
+                    <h3>Roupas</h3>
+                    <p>Usa tamanho de 1 ano há um tempo, sugerimos <strong>tamanho 2 anos</strong> (ou maior).</p>
+                </div>
+                <div class="info-card">
+                    <span class="icon">👟</span>
+                    <h3>Calçados</h3>
+                    <p>O pezinho dele calça atualmente tamanho <strong>19</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="margin: 15px 0; display: flex; justify-content: center; gap: 20px;">
+            <img src="nuvem.jpg" alt="Nuvem" style="max-width: 100px;">
+            <img src="passaro.jpg" alt="Pássaro" style="max-width: 80px;">
+        </div>
+        <footer>
+            <p>Feito com muito amor para o 1º Aninho do Isaac ☀️💛</p>
+        </footer>
+    </div>
+
+    <script>
+        function confirmarPresenca() {
+            const inputNome = document.getElementById('nomeConvidado').value.trim();
+            
+            if (inputNome === "") {
+                alert("Por favor, digite o seu nome antes de confirmar!");
+                return;
+            }
+
+            document.getElementById('rsvpBox').style.display = 'none';
+            document.getElementById('nomeExibido').innerText = inputNome;
+            document.getElementById('mensagemAgradecimento').style.display = 'block';
+        }
+
+        const countDownDate = new Date("Dec 12, 2026 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown-container").innerHTML = "<h3>O grande dia chegou! 🎉</h3>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
    
