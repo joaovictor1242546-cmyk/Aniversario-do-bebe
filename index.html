@@ -19,16 +19,20 @@
             </div>
         </header>
 
-        <!-- Seção de Confirmação Interativa -->
+        <!-- Seção de Confirmação Interativa com Nome -->
         <section class="content-section" id="confirmar">
             <h2>Confirme a sua Presença</h2>
-            <p>Sua presença vai deixar o dia do Isaac ainda mais feliz! Clique no botão abaixo para confirmar:</p>
+            <p>Digite seu nome abaixo para confirmar que vai celebrar com a gente:</p>
             
-            <div class="rsvp-box">
-                <button id="btnConfirmar" class="btn-principal" onclick="confirmarPresenca()">Sim, eu vou! 🎉</button>
-                <div id="mensagemAgradecimento" class="hidden-msg">
-                    <p>✨ <strong>Oba!</strong> Agradecemos a sua confirmação. Contamos com a sua presença para comemorar esse momento conosco! 💙</p>
-                </div>
+            <div class="rsvp-box" id="rsvpBox">
+                <input type="text" id="nomeConvidado" placeholder="Digite seu nome completo..." class="input-nome">
+                <br>
+                <button onclick="confirmarPresenca()" class="btn-principal">Sim, eu vou! 🎉</button>
+            </div>
+
+            <div id="mensagemAgradecimento" class="hidden-msg">
+                <h3>Oba, <span id="nomeExibido"></span>! 💙</h3>
+                <p>✨ Agradecemos a sua confirmação. Contamos com a sua presença para comemorar esse momento conosco!</p>
             </div>
         </section>
 
@@ -57,14 +61,25 @@
         </footer>
     </div>
 
-    <!-- Script Simples para a Interatividade -->
+    <!-- Script para capturar o nome e interagir -->
     <script>
         function confirmarPresenca() {
-            const botao = document.getElementById('btnConfirmar');
-            const mensagem = document.getElementById('mensagemAgradecimento');
+            const inputNome = document.getElementById('nomeConvidado').value.trim();
             
-            botao.style.display = 'none'; // Esconde o botão após clicar
-            mensagem.style.display = 'block'; // Mostra a mensagem de agradecimento
+            if (inputNome === "") {
+                alert("Por favor, digite o seu nome antes de confirmar!");
+                return;
+            }
+
+            // Esconde a caixinha de input e botão
+            document.getElementById('rsvpBox').style.display = 'none';
+            
+            // Mostra o nome na mensagem de agradecimento
+            document.getElementById('nomeExibido').innerText = inputNome;
+            
+            // Exibe a mensagem personalizada
+            const mensagem = document.getElementById('mensagemAgradecimento');
+            mensagem.style.display = 'block';
         }
     </script>
 
