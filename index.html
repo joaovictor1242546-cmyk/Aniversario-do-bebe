@@ -12,267 +12,129 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
-            color: #334155;
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #e0f2fe 100%);
+            color: #475569;
             line-height: 1.6;
-            padding: 30px 15px;
+            padding: 20px 10px;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .site-container {
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
+            margin: 0 auto;
             background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-            border: 6px solid #bae6fd;
+            padding: 30px 25px;
+            border-radius: 35px;
+            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+            border: 6px solid #fde047;
             text-align: center;
+        }
+
+        /* Cabeçalho festivo com carinha de sol */
+        .hero {
+            background: linear-gradient(135deg, #fde047 0%, #38bdf8 100%);
+            color: #1e293b;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            border: 4px solid #ffffff;
         }
 
         .tag-festa {
             display: inline-block;
-            background-color: #fef08a;
-            padding: 8px 18px;
+            background-color: #ffffff;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #b45309;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #d97706;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .hero h1 {
             font-size: 2.8rem;
-            margin-bottom: 12px;
-            color: #0284c7;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px #ffffff;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            color: #64748b;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+            font-weight: 600;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        /* Foto da Criança em Destaque */
+        .foto-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background-color: #e0f2fe;
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contador Regressivo em tons alegres */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .countdown-box {
+            background: #ffffff;
+            border: 2px solid #38bdf8;
+            padding: 10px;
+            border-radius: 14px;
+            min-width: 65px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .countdown-box span {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #0284c7;
+        }
+
+        .countdown-box small {
+            font-size: 0.7rem;
+            color: #64748b;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         .data-badge {
-            background-color: #f0fdf4;
-            color: #15803d;
-            border: 2px dashed #4ade80;
-            padding: 12px 20px;
-            border-radius: 16px;
+            background-color: #fef9c3;
+            color: #854d0e;
+            border: 2px dashed #facc15;
+            padding: 10px 18px;
+            border-radius: 14px;
             display: inline-block;
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-weight: bold;
             font-size: 0.95rem;
         }
 
-        .content-section {
-            background: #f8fafc;
-            padding: 30px 20px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            border: 2px solid #e2e8f0;
-            text-align: center;
-        }
-
-        .content-section h2 {
-            color: #0284c7;
-            margin-bottom: 12px;
-            font-size: 1.5rem;
-        }
-
-        .content-section p {
-            color: #475569;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        .input-nome {
-            width: 100%;
-            max-width: 380px;
-            padding: 14px 20px;
-            border: 2px solid #cbd5e1;
-            border-radius: 50px;
-            font-size: 1rem;
-            outline: none;
-            margin-bottom: 15px;
-            text-align: center;
-            background: #ffffff;
-            transition: all 0.3s ease;
-        }
-
-        .input-nome:focus {
-            border-color: #0284c7;
-            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
-        }
-
-        .btn-principal {
-            display: inline-block;
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-            color: white;
-            padding: 14px 35px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.05rem;
-            font-weight: bold;
-            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
-            transition: all 0.2s ease;
-        }
-
-        .btn-principal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
-        }
-
-        .hidden-msg {
-            display: none;
-            background-color: #f0fdf4;
-            border: 2px solid #4ade80;
-            padding: 25px;
-            border-radius: 20px;
-            color: #166534;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .hidden-msg h3 {
-            margin-bottom: 8px;
-            font-size: 1.4rem;
-            color: #15803d;
-        }
-
-        .hidden-msg p {
-            margin: 0;
-            font-size: 1.05rem;
-            color: #166534;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 550px) {
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .info-card {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 16px;
-            border: 2px solid #e0f2fe;
-            text-align: center;
-        }
-
-        .info-card .icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .info-card h3 {
-            color: #0369a1;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .info-card p {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 0.85rem;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="site-container">
-        <!-- Cabeçalho Principal -->
-        <header class="hero">
-            <span class="tag-festa">✨ 1 Aninho do Isaac • 12 de Dezembro ✨</span>
-            <h1>365 Sorrisos</h1>
-            <p>Cada dia ao lado do Isaac foi repleto de alegria e novos aprendizados. Vamos celebrar juntos!</p>
-            <div class="data-badge">
-                📅 <strong>Confirmação:</strong> De 15 a 25 de Novembro
-            </div>
-        </header>
-
-        <!-- Seção de Confirmação Interativa -->
-        <section class="content-section" id="confirmar">
-            <h2>Confirme sua Presença</h2>
-            <p>Digite seu nome para enviar o aviso para a família:</p>
-            
-            <div class="rsvp-box" id="rsvpBox">
-                <input type="text" id="nomeConvidado" placeholder="Digite seu nome completo..." class="input-nome">
-                <br>
-                <button onclick="confirmarPresenca()" class="btn-principal">Sim, eu vou! 🎉</button>
-            </div>
-
-            <div id="mensagemAgradecimento" class="hidden-msg">
-                <h3>Oba, <span id="nomeExibido"></span>! 💙</h3>
-                <p>✨ Agradecemos a sua confirmação. Contamos com a sua presença para comemorar esse momento conosco!</p>
-            </div>
-        </section>
-
-        <!-- Seção de Informações e Tamanhos -->
-        <section class="content-section">
-            <h2>Dicas & Tamanhos do Isaac 👕👟</h2>
-            <p>Medidas atuais para quem quiser carinho em forma de presente:</p>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <span class="icon">👕</span>
-                    <h3>Roupas</h3>
-                    <p>Usa tamanho de 1 ano há um tempo, sugerimos <strong>tamanho 2 anos</strong> (ou maior).</p>
-                </div>
-                <div class="info-card">
-                    <span class="icon">👟</span>
-                    <h3>Calçados</h3>
-                    <p>O pezinho dele calça atualmente tamanho <strong>19</strong>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rodapé -->
-        <footer>
-            <p>Feito com muito amor para o 1º Aninho do Isaac ☀️💙</p>
-        </footer>
-    </div>
-
-    <!-- Script Interativo -->
-    <script>
-        function confirmarPresenca() {
-            const inputNome = document.getElementById('nomeConvidado').value.trim();
-            
-            if (inputNome === "") {
-                alert("Por favor, digite o seu nome antes de confirmar!");
-                return;
-            }
-
-            document.getElementById('rsvpBox').style.display = 'none';
-            document.getElementById('nomeExibido').innerText = inputNome;
-            document.getElementById('mensagemAgradecimento').style.display = 'block';
-        }
-    </script>
-
-</body>
-</html>
+        /* Seções
+     
+     
