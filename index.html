@@ -3,18 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>365 Sorrisos</title>
+    <title>365 Sorrisos - 1 Aninho do Isaac</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-    <!-- Cabeçalho / Tema -->
-    <header class="hero">
-        <span class="tag-festa">Festa de 1 Ano • 12 de Dezembro</span>
-        <h1>365 Dias, 365 Sorrisos</h1>
-        <p>O sorriso dele ilumina nossos dias e agora queremos celebrar com quem a gente ama!</p>
-        <div class="data-badge">📅 Confirmação de Presença: De 15 a 25 de Novembro (10 dias)</div>
-    </header>
+    <div class="site-container">
+        <!-- Cabeçalho Principal -->
+        <header class="hero">
+            <span class="tag-festa">✨ 1 Aninho do Isaac • 12 de Dezembro ✨</span>
+            <h1>365 Sorrisos</h1>
+            <p>Cada dia ao lado do Isaac foi repleto de alegria e novos aprendizados. Agora queremos celebrar esse primeiro ano de muito amor com quem é especial para nós!</p>
+            <div class="data-badge">
+                📅 <strong>Confirmação de Presença:</strong> De 15 a 25 de Novembro
+            </div>
+        </header>
+
+        <!-- Seção de Confirmação Interativa -->
+        <section class="content-section" id="confirmar">
+            <h2>Confirme a sua Presença</h2>
+            <p>Sua presença vai deixar o dia do Isaac ainda mais feliz! Clique no botão abaixo para confirmar:</p>
+            
+            <div class="rsvp-box">
+                <button id="btnConfirmar" class="btn-principal" onclick="confirmarPresenca()">Sim, eu vou! 🎉</button>
+                <div id="mensagemAgradecimento" class="hidden-msg">
+                    <p>✨ <strong>Oba!</strong> Agradecemos a sua confirmação. Contamos com a sua presença para comemorar esse momento conosco! 💙</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Informações e Tamanhos -->
+        <section class="content-section">
+            <h2>Dicas & Tamanhos do Isaac 👕👟</h2>
+            <p>Muita gente pergunta sobre tamanhos para carinho ou presentinhos. Aqui estão as medidas atuais dele:</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="icon">👕</span>
+                    <h3>Roupas</h3>
+                    <p>Como ele já usa tamanho de 1 ano há um tempinho, sugerimos <strong>tamanho 2 anos</strong> (ou maior) para aproveitar bastante!</p>
+                </div>
+                <div class="info-card">
+                    <span class="icon">👟</span>
+                    <h3>Calçados</h3>
+                    <p>O pezinho dele calça atualmente tamanho <strong>19</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Feito com muito amor para o 1º Aninho do Isaac ☀️💙</p>
+        </footer>
+    </div>
+
+    <!-- Script Simples para a Interatividade -->
+    <script>
+        function confirmarPresenca() {
+            const botao = document.getElementById('btnConfirmar');
+            const mensagem = document.getElementById('mensagemAgradecimento');
+            
+            botao.style.display = 'none'; // Esconde o botão após clicar
+            mensagem.style.display = 'block'; // Mostra a mensagem de agradecimento
+        }
+    </script>
 
 </body>
 </html>
