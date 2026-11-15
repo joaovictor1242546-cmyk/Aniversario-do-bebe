@@ -1,5 +1,5 @@
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -285,7 +285,6 @@
 
     <div class="site-container">
         <header class="hero">
-            <!-- Certifique-se de que o arquivo do sol no GitHub se chame sol.jpg -->
             <img src="sol.jpg" alt="Sol" class="img-sol">
             
             <br>
@@ -324,9 +323,10 @@
             </div>
         </header>
 
+        <!-- Seção de Confirmação Interativa (Integrada com o seu WhatsApp) -->
         <section class="content-section" id="confirmar">
             <h2>Confirme sua Presença 🎉</h2>
-            <p>Digite seu nome para avisar a família que você vai:</p>
+            <p>Digite seu nome para enviar sua confirmação direto no WhatsApp:</p>
             
             <div class="rsvp-box" id="rsvpBox">
                 <input type="text" id="nomeConvidado" placeholder="Seu nome completo..." class="input-nome">
@@ -336,14 +336,15 @@
 
             <div id="mensagemAgradecimento" class="hidden-msg">
                 <h3>Oba, <span id="nomeExibido"></span>! ✨</h3>
-                <p>Agradecemos a sua confirmação. Contamos com a sua energia boa para celebrar com o Isaac!</p>
+                <p>O WhatsApp foi aberto para você enviar a sua confirmação. Contamos com a sua presença!</p>
             </div>
         </section>
 
+        <!-- Seção de Dúvidas / WhatsApp com o seu número -->
         <section class="content-section" style="background-color: #fef9c3; border-color: #fde047;">
             <h2 style="color: #d97706;">Ficou com alguma dúvida? 💬</h2>
             <p style="color: #92400e;">Fale diretamente com a organização no WhatsApp:</p>
-            <a href="https://wa.me/+5511942378523?text=Olá!%20Vim%20pelo%20site%20do%201%20aninho%20do%20Isaac." target="_blank" class="btn-principal btn-whatsapp">
+            <a href="https://wa.me/5511942378523?text=Olá!%20Vim%20pelo%20site%20do%201%20aninho%20do%20Isaac." target="_blank" class="btn-principal btn-whatsapp">
                 Chamar no WhatsApp 📱
             </a>
         </section>
@@ -384,6 +385,16 @@
                 return;
             }
 
+            // O seu número cadastrado com DDD e DDI
+            const seuNumeroWhatsApp = "5511942378523"; 
+
+            // Mensagem montada automaticamente com o nome que a pessoa digitou
+            const textoMensagem = encodeURIComponent(`Olá! Vim pelo site do 1 aninho do Isaac e quero confirmar minha presença. Meu nome é: ${inputNome}`);
+
+            // Abre o WhatsApp com a mensagem pronta
+            window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${textoMensagem}`, '_blank');
+
+            // Mostra o aviso na tela também
             document.getElementById('rsvpBox').style.display = 'none';
             document.getElementById('nomeExibido').innerText = inputNome;
             document.getElementById('mensagemAgradecimento').style.display = 'block';
@@ -411,28 +422,6 @@
             }
         }, 1000);
     </script>
-function confirmarPresenca() {
-    const inputNome = document.getElementById('nomeConvidado').value.trim();
-    
-    if (inputNome === "") {
-        alert("Por favor, digite o seu nome antes de confirmar!");
-        return;
-    }
 
-    // O número do WhatsApp que vai receber as confirmações (coloque o seu DDD e número aqui)
-    const seuNumeroWhatsApp = "+5511942378523"; 
-
-    // A mensagem que vai ser montada automaticamente com o nome que a pessoa digitou
-    const textoMensagem = encodeURIComponent(`Olá! Vim pelo site do 1 aninho do Isaac e quero confirmar minha presença. Meu nome é: ${inputNome}`);
-
-    // Abre o WhatsApp já com a mensagem preenchida
-    window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${textoMensagem}`, '_blank');
-
-    // Mostra a mensagem de sucesso também na tela para o convidado
-    document.getElementById('rsvpBox').style.display = 'none';
-    document.getElementById('nomeExibido').innerText = inputNome;
-    document.getElementById('mensagemAgradecimento').style.display = 'block';
-}
 </body>
-</html>
-   
+</html>  
