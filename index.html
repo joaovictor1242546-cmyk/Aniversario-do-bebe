@@ -1,116 +1,126 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>365 Sorrisos - 1 Aninho do Isaac</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fef9c3 0%, #e0f2fe 50%, #ffedd5 100%);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fef9c3 0%, #e0f2fe 100%);
             color: #334155;
-            line-height: 1.6;
-            padding: 25px 15px;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
         }
-
-        .site-container {
+        .container {
             width: 100%;
-            max-width: 680px;
-            margin: 0 auto;
+            max-width: 600px;
             background: #ffffff;
-            padding: 35px 25px;
-            border-radius: 40px;
-            box-shadow: 0 20px 45px rgba(2, 132, 199, 0.15);
-            border: 8px solid #bae6fd;
-            text-align: center;
-        }
-
-        /* Cabeçalho Temático Inspirado na Arte */
-        .hero {
-            background: linear-gradient(180deg, #e0f2fe 0%, #fef9c3 100%);
-            color: #1e293b;
-            text-align: center;
-            padding: 40px 20px;
+            padding: 30px;
             border-radius: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-            border: 4px solid #ffffff;
-            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 6px solid #bae6fd;
+            text-align: center;
         }
-
-        /* Sol Sorridente no Topo */
-        .sol-arte {
-            font-size: 3.5rem;
-            margin-bottom: -10px;
-            display: inline-block;
-            animation: flutuar 3s ease-in-out infinite;
-        }
-
-        @keyframes flutuar {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .tag-festa {
-            display: inline-block;
-            background-color: #ffffff;
-            padding: 8px 22px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 800;
+        h1 {
             color: #0284c7;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-            border: 2px solid #bae6fd;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #0284c7;
-            font-weight: 900;
-            text-shadow: 2px 2px 0px #ffffff;
-            letter-spacing: -1px;
         }
-
-        .hero h1 span.num-365 {
-            color: #f59e0b;
+        .sol {
+            font-size: 3rem;
         }
-
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 25px;
-            color: #475569;
-            font-weight: 600;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .tag {
+            background: #fef08a;
+            color: #d97706;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
         }
-
-        /* Moldura da Foto do Isaac */
-        .foto-container {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 6px solid #ffffff;
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-            background-color: #fef08a;
+        .box {
+            background: #f0fdf4;
+            border: 2px solid #4ade80;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
         }
-
-        .foto-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        input {
+            width: 80%;
+            padding: 12px;
+            border: 2px solid #bae6fd;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            outline: none;
         }
+        button {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0369a1;
+        }
+        #msg {
+            display: none;
+            margin-top: 15px;
+            color: #15803d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-        /* Contador Regress
-    
+    <div class="container">
+        <div class="sol">☀️</div>
+        <span class="tag">1 Aninho do Isaac • 12 de Dezembro</span>
+        <h1>365 Sorrisos</h1>
+        <p>Cada dia ao lado do Isaac foi repleto de alegria. Vamos celebrar juntos!</p>
+
+        <div class="box">
+            <h3>Confirme sua Presença</h3>
+            <p>Digite seu nome abaixo:</p>
+            <div id="formPresenca">
+                <input type="text" id="nome" placeholder="Seu nome completo...">
+                <br>
+                <button onclick="confirmar()">Sim, eu vou! 💛</button>
+            </div>
+            <div id="msg">
+                Oba, <span id="nomeUser"></span>! Agradecemos a sua confirmação. Contamos com você! ✨
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">
+            <p>👕 <strong>Roupas:</strong> Sugerimos tamanho 2 anos.</p>
+            <p>👟 <strong>Calçados:</strong> Tamanho 19.</p>
+        </div>
+    </div>
+
+    <script>
+        function confirmar() {
+            var nome = document.getElementById('nome').value.trim();
+            if (nome === "") {
+                alert("Por favor, digite o seu nome!");
+                return;
+            }
+            document.getElementById('formPresenca').style.display = 'none';
+            document.getElementById('nomeUser').innerText = nome;
+            document.getElementById('msg').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
